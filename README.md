@@ -23,7 +23,8 @@ docker run -d --rm --name ubuntu-ssh -p 2222:22 ghcr.io/arumugamsubramanian/ubun
 ```shell
 # From Docker Hub
 docker pull arumugamsubramanian/ubuntu-ssh:main
-docker run -d --rm --name ubuntu-ssh -p 2222:22 arumugamsubramanian/ubuntu-ssh:main
+# I use kind k8s cluster
+docker run -d --rm --network="kind" --name ubuntu-ssh -p 2222:22 arumugamsubramanian/ubuntu-ssh:main
 ```
 
 ### login from host
