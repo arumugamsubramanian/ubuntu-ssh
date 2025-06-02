@@ -18,7 +18,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
-ARG TERRAFORM_VERSION=1.8.0
+ARG TERRAFORM_VERSION=1.2.0
 ARG TARGETARCH
 
 RUN echo "TARGETARCH is $TARGETARCH"
