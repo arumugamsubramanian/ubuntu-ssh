@@ -5,7 +5,7 @@ FROM ubuntu
 RUN apt-get update && apt-get upgrade -y
 
 # Install OpenSSH Server and tex libraries for resume creation
-RUN apt-get install --fix-missing -y openssh-server texlive texlive-base texlive-latex-extra texlive-fonts-extra
+RUN apt-get install --fix-missing -y openssh-server curl unzip texlive texlive-base texlive-latex-extra texlive-fonts-extra
 
 # Set up configuration for SSH
 RUN mkdir /var/run/sshd
