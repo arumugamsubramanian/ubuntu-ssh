@@ -18,6 +18,10 @@ RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config && \
 # SSH login fix. Otherwise, user is kicked off after login
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
+RUN mkdir -p /root/.ssh && \
+    echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" >> /root/.ssh/config && \
+    chmod 600 /root/.ssh/config
+
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
