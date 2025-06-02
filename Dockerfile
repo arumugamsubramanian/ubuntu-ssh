@@ -1,3 +1,5 @@
+ARG TARGETARCH=amd64
+
 # Use the official image as a parent image
 FROM ubuntu
 
